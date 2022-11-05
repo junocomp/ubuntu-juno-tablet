@@ -5,4 +5,4 @@ Ubuntu drivers for Juno Tablet
 
 ```sudo apt update```
 
-```sudo apt install juno-tablet```
+```sudo apt install juno-tablet es8316-dkms```
