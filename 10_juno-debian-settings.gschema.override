@@ -1,0 +1,16 @@
+##########################
+# Juno Computers US & UK #
+##########################
+
+[org.gnome.mutter]
+experimental-features = ['scale-monitor-framebuffer']
+
+[sm.puri.phosh]
+app-filter-mode = []
+automatic-high-contrast = true
+
+[sm.puri.Chatty]
+experimental-features = true
+
+[org.gnome.settings-daemon.plugins.power]
+sleep-inactive-ac-type = 'nothing'
