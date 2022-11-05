@@ -1,5 +1,5 @@
-juno-tablet (0.1.0-4) jammy; urgency=low
+juno-tablet (0.1.0-5) jammy; urgency=low
 
-  * Removed youtube-dl as dependency
+  * Removed linux-oem as dependency
   
- -- Juno <junocomputers@outlook.com>  Tue, 1 Nov 2022 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Sat, 5 Nov 2022 08:01:52 +0000
