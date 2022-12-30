@@ -1,5 +1,5 @@
-juno-tablet (0.1.0-5) jammy; urgency=low
+juno-tablet (0.1.0-6) jammy; urgency=low
 
-  * Removed linux-oem as dependency
+  * Added Juno Power Profiles
   
- -- Juno <junocomputers@outlook.com>  Sat, 5 Nov 2022 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Fri, 30 Dec 2022 08:01:52 +0000
