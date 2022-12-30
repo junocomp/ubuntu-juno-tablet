@@ -55,6 +55,8 @@ install-core:
 	install -Dpm 0644 rules/squeekboard.rules $(DESTDIR)/etc/udev/rules.d/squeekboard.rules
 	install -Dpm 0644 juno.pa $(DESTDIR)/etc/pulse/default.pa.d/juno.pa
 	install -Dpm 0644 rules/external-display-power-profile.rules $(DESTDIR)/etc/udev/rules.d/external-display-power-profile.rules
+	install -Dpm 0755 juno-pp $(DESTDIR)/usr/bin/juno-pp
+	install -Dpm 0644 juno-pp.service $(DESTDIR)/etc/systemd/system/juno-pp.service
 
 install: install-core
 
@@ -94,4 +96,5 @@ uninstall:
 	#rm -f $(DESTDIR)/usr/bin/restore-headphone-mic
 	#rm -f $(DESTDIR)/usr/bin/alsa-info
 	rm -f $(DESTDIR)/usr/share/suspend-then-hibernate/HiFi.conf
-
+	rm -f $(DESTDIR)/usr/bin/juno-pp
+	rm -f $(DESTDIR)/etc/systemd/system/juno-pp.service
