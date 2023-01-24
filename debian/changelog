@@ -1,5 +1,5 @@
-juno-tablet (0.1.0-8) jammy; urgency=low
+juno-tablet (0.1.0-9) jammy; urgency=low
 
-  * Added alsa-utils as dependency
+  * Updated 10_juno-debian-settings.gschema
   
- -- Juno <junocomputers@outlook.com>  Wed, 18 Jan 2023 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Tue, 28 Jan 2023 08:01:52 +0000
