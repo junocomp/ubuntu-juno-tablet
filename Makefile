@@ -26,9 +26,9 @@ install-core:
 	#install -Dpm 0755 check-battery $(DESTDIR)/usr/bin/check-battery
 	#install -Dpm 0644 gaudible-deb.desktop $(DESTDIR)/etc/xdg/autostart/gaudible-deb.desktop
 	#install -Dpm 0644 gaudible-flatpak.desktop $(DESTDIR)/etc/xdg/autostart/gaudible-flatpak.desktop
-	#install -Dpm 0755 turbo/turbo-on $(DESTDIR)/usr/bin/turbo-on
-	#install -Dpm 0755 turbo/turbo-off $(DESTDIR)/usr/bin/turbo-off
-	#install -Dpm 0755 turbo/turbo-stat $(DESTDIR)/usr/bin/turbo-stat
+	install -Dpm 0755 turbo/turbo-on $(DESTDIR)/usr/bin/turbo-on
+	install -Dpm 0755 turbo/turbo-off $(DESTDIR)/usr/bin/turbo-off
+	install -Dpm 0755 turbo/turbo-stat $(DESTDIR)/usr/bin/turbo-stat
 	install -Dpm 0644 turbo/juno-turbo.rules $(DESTDIR)/etc/udev/rules.d/juno-turbo.rules
 	install -Dpm 0644 rules/99-inverted-touchscreen.rules $(DESTDIR)/etc/udev/rules.d/99-inverted-touchscreen.rules
 	install -Dpm 0644 rules/70-wifi-pm.rules $(DESTDIR)/etc/udev/rules.d/70-wifi-pm.rules
@@ -57,6 +57,7 @@ install-core:
 	install -Dpm 0644 rules/external-display-power-profile.rules $(DESTDIR)/etc/udev/rules.d/external-display-power-profile.rules
 	install -Dpm 0755 juno-pp $(DESTDIR)/usr/bin/juno-pp
 	install -Dpm 0644 juno-pp.service $(DESTDIR)/etc/systemd/system/juno-pp.service
+	install -Dpm 0755 juno-monitor $(DESTDIR)/usr/bin/juno-monitor
 
 install: install-core
 
@@ -67,9 +68,9 @@ uninstall:
 	#rm -f $(DESTDIR)/etc/xdg/autostart/gaudible-deb.desktop
 	#rm -f $(DESTDIR)/usr/bin/gaudible-deb
 	#rm -f $(DESTDIR)/usr/bin/gaudible-flatpak
-	#rm -f $(DESTDIR)/usr/bin/turbo-on
-	#rm -f $(DESTDIR)/usr/bin/turbo-off
-	#rm -f $(DESTDIR)/usr/bin/turbo-stat
+	rm -f $(DESTDIR)/usr/bin/turbo-on
+	rm -f $(DESTDIR)/usr/bin/turbo-off
+	rm -f $(DESTDIR)/usr/bin/turbo-stat
 	rm -f $(DESTDIR)/etc/udev/rules.d/juno-turbo.rules
 	rm -f $(DESTDIR)/etc/udev/rules.d/99-inverted-touchscreen.rules
 	rm -f $(DESTDIR)/etc/udev/rules.d/70-wifi-pm.rules
@@ -98,3 +99,4 @@ uninstall:
 	rm -f $(DESTDIR)/usr/share/suspend-then-hibernate/HiFi.conf
 	rm -f $(DESTDIR)/usr/bin/juno-pp
 	rm -f $(DESTDIR)/etc/systemd/system/juno-pp.service
+	rm -f $(DESTDIR)/usr/bin/juno-monitor
