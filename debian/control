@@ -8,6 +8,36 @@ Package: juno-tablet
 Section: base
 Priority: optional
 Architecture: all
-Depends: flatpak, hwinfo, libinput-tools, usbutils, plocate, qtwayland5, fonts-open-sans, ffmpeg, gstreamer1.0-gl, mesa-va-drivers, mesa-vulkan-drivers, git, curl, intel-media-va-driver-non-free, thermald, juno-powertop, firmware-sof-signed, pulseaudio-module-gsettings, bolt, acpid, lshw, alsa-ucm-conf, lm-sensors, alsa-topology-conf, juno-info, v4l-utils, wget, irqbalance, openssh-server, acpi, power-profiles-daemon, alsa-utils
+Depends: flatpak,
+	 hwinfo,
+	 libinput-tools,
+	 usbutils,
+	 plocate,
+	 qtwayland5, 
+	 fonts-open-sans,
+	 ffmpeg,
+	 gstreamer1.0-gl,
+	 mesa-va-drivers,
+	 mesa-vulkan-drivers,
+	 git,
+	 curl,
+	 intel-media-va-driver-non-free,
+	 thermald,
+	 juno-powertop,
+	 firmware-sof-signed,
+	 bolt,
+	 acpid,
+	 lshw,
+	 alsa-ucm-conf,
+	 lm-sensors,
+	 alsa-topology-conf,
+	 juno-info,
+	 v4l-utils,
+	 wget,
+	 irqbalance,
+	 openssh-server,
+	 acpi,
+	 power-profiles-daemon,
+	 alsa-utils,
 Homepage: https://junocomputers.com
 Description: Ubuntu based drivers for Juno Tablet

@@ -1,31 +1,13 @@
 #!/bin/bash
 
-# Set chassis to handset
-#hostnamectl set-chassis handset
-#cat /etc/machine-info
-
 # GRUB
-#sed -i -e '/GRUB_TIMEOUT/d' /etc/default/grub
-#sed -i '/\GRUB_DEFAULT/a GRUB_TIMEOUT=0' /etc/default/grub
-#sed -i -e '/GRUB_TIMEOUT_STYLE/d' /etc/default/grub
-#sed -i '/\GRUB_TIMEOUT/a GRUB_TIMEOUT_STYLE=hidden' /etc/default/grub
-sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT/d' /etc/default/grub
-sed -i '/\GRUB_DISTRIBUTOR/a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=s2idle"' /etc/default/grub
+#sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT/d' /etc/default/grub
+#sed -i '/\GRUB_DISTRIBUTOR/a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=s2idle"' /etc/default/grub
+sed -i 's/mem_sleep_default=s2idle//g' /etc/default/grub
 update-grub
-
-#hostnamectl set-chassis handset
 
 # Flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-# Remove Trusted keys
-#cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
-
-# Update topologis for essx8336 - Remove this when v2.2 is updated
-#cd tmp
-#wget -c https://github.com/thesofproject/linux/files/9280208/es8336_topologies_main.tar.gz
-#tar xf es8336_topologies_main.tar.gz -C /usr/lib/firmware/intel/sof-tplg/
-#rm es8336_topologies_main.tar.gz
 
 # Recopy HiFi.conf to ucm2
 rm /usr/share/alsa/ucm2/Intel/sof-essx8336/HiFi.conf;
@@ -37,25 +19,8 @@ rm /usr/lib/systemd/system/systemd-suspend.service
 ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /usr/lib/systemd/system/systemd-suspend.service
 
 # Enable Systemd services
-systemctl enable powertop
-systemctl start powertop
-#systemctl enable powertop-usb-mouse
-#systemctl start powertop-usb-mouse
 systemctl enable juno-pp
 systemctl enable juno-kd
-
-# Reload systemd for suspend-then-hibernate
-systemctl daemon-reload
-systemctl stop powertop
-systemctl start powertop
-
-# Enable suspend-then-hibernate in logind.conf
-#sed -i -e '/HandleLidSwitch/d' /etc/systemd/logind.conf
-#sed -i '/\#HandleHibernateKey=hibernate/a HandleLidSwitch=suspend-then-hibernate' /etc/systemd/logind.conf
-
-# Hibernate starts in 5 minutes after suspend
-#sed -i -e '/HibernateDelaySec/d' /etc/systemd/sleep.conf
-#sed -i '/\#HybridSleepState/a HibernateDelaySec=300s' /etc/systemd/sleep.conf
 
 # Update initramfs
 update-initramfs -u -k all
