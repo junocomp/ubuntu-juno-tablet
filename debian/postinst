@@ -1,10 +1,17 @@
 #!/bin/bash
 
 # GRUB
-#sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT/d' /etc/default/grub
-#sed -i '/\GRUB_DISTRIBUTOR/a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=s2idle"' /etc/default/grub
 sed -i 's/mem_sleep_default=s2idle//g' /etc/default/grub
 update-grub
+
+#DISABLE APPORT
+if grep -q "enabled=1" "/etc/default/apport" ; then
+
+        echo 'Disabling Apport';
+        sed -i 's/enabled=1/enabled=0/' /etc/default/apport;
+
+        else echo 'Apport is already disabled';
+fi
 
 # Flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
