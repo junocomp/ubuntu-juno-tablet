@@ -9,4 +9,6 @@ Ubuntu drivers for Juno Tablet
 
 ####################
 
+### Requires Kernel 6.1+
+
 <a href="https://junocomputers.com">https://junocomputers.com</a>
