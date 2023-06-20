@@ -39,5 +39,13 @@ Depends: flatpak,
 	 acpi,
 	 power-profiles-daemon,
 	 alsa-utils,
+	 unrar,
+	 rar,
+	 p7zip-full,
+	 p7zip-rar,
+	 ubuntu-restricted-addons,
+	 gstreamer1.0-plugins-bad,
+	 smartmontools,
+	 cpufrequtils
 Homepage: https://junocomputers.com
 Description: Ubuntu based drivers for Juno Tablet
