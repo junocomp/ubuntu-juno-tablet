@@ -1,4 +1,4 @@
-juno-tablet (0.1.2) jammy; urgency=low
+juno-tablet (0.1.2-1) jammy; urgency=low
 
   * Added partial support for Juno Tab 2
   * Added Suspend support for Tab 1
