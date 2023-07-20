@@ -1,6 +1,7 @@
-juno-tablet (0.1.2-2) jammy; urgency=low
+juno-tablet (0.1.2-4) jammy; urgency=low
 
   * Added partial support for Juno Tab 2
   * Added Suspend support for Tab 1
   
- -- Juno <junocomputers@outlook.com>  Wed, 21 Jun 2023 08:01:52 +0000
+  
+ -- Juno <junocomputers@outlook.com>  Thu, 20 Jul 2023 08:01:52 +0000
