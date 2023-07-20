@@ -1,9 +1,16 @@
 #!/bin/bash
 tablet="$(awk '{print substr($0,0,3);}' /sys/class/dmi/id/bios_version)"
+tablet2="$(dmidecode -s system-manufacturer | head -1)"
 
 # GRUB
-sed -i 's/mem_sleep_default=s2idle//g' /etc/default/grub
-update-grub
+
+case "$tablet2" in
+     Digitek)
+     sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT/d' /etc/default/grub;
+     sed -i '/\GRUB_DISTRIBUTOR/a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i8042.nopnp pcie_port_pm=off"' /etc/default/grub
+     update-grub
+     ;;
+esac
 
 #DISABLE APPORT
 if grep -q "enabled=1" "/etc/default/apport" ; then
@@ -32,7 +39,6 @@ ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /usr/lib/sy
 
 # Enable Systemd services
 systemctl enable juno-pp
-systemctl enable juno-kd
 
 # Update initramfs
 update-initramfs -u -k all
