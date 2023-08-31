@@ -48,6 +48,7 @@ Depends: flatpak,
 	 gstreamer1.0-plugins-bad,
 	 smartmontools,
 	 cpufrequtils,
-	 iw
+	 iw,
+	 binutils
 Homepage: https://junocomputers.com
 Description: Ubuntu based drivers for Juno Tablet
